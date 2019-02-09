@@ -3,7 +3,7 @@ const { context, github: { request } } = new Toolkit()
 
 const name = context.payload.name;
 const conclusion = context.payload.conclusion
-const sha = context.payload.pull_request.head.sha;
+const sha = context.payload.check_suite.head_sha;
 
 console.log(JSON.stringify(context.payload));
 
