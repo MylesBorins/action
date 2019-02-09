@@ -1,8 +1,6 @@
 const { Toolkit } = require('actions-toolkit')
 const { context, github: { request } } = new Toolkit()
 
-console.log(JSON.stringify(context.payload));
-
 const name = context.payload.check_suite.app.name;
 const conclusion = context.payload.check_suite.conclusion
 const sha = context.payload.check_suite.head_sha;
