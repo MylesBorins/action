@@ -1,9 +1,9 @@
-workflow "Set status on pull_request" {
-  on = "pull_request"
-  resolves = ["Set status"]
+workflow "Post Staging Link on pull_request" {
+  on = "check_suite"
+  resolves = ["Post Staging Link"]
 }
 
-action "Set status" {
-  uses = "." # use itself :)
+action "Post Staging Link" {
+  uses = "./.github/action/result-poster"
   secrets = ["GITHUB_TOKEN"]
 }
